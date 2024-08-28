@@ -1,0 +1,12 @@
+<ion-item>
+  <ion-thumbnail slot="start">
+    <img [src]="item.image">
+  </ion-thumbnail>
+  <ion-label>
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.price | currency:'USD' }}</p>
+  </ion-label>
+  <ion-button fill="clear" (click)="removeItem()">
+    <ion-icon name="trash-outline"></ion-icon>
+  </ion-button>
+</ion-item>

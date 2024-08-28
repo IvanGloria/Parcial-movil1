@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Cart Shopping</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <app-cart-item *ngFor="let item of cartItems" [item]="item" (remove)="removeItem($event)"></app-cart-item>
+  </ion-list>
+  <ion-button expand="block" (click)="checkout()" *ngIf="cartItems.length > 0">Checkout</ion-button>
+</ion-content>
