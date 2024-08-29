@@ -22,17 +22,17 @@ export class CartPage implements OnInit {
   }
 
   removeItem(product: any) {
-    this.cartService.removeFromCart(product);
-    this.presentToast('Product removed from cart');
+    this.cartService.removeFromCart(product); // funcion para eliminar un produtno del carrito y mostrar el mensaje
+    this.presentToast("Product Removed")
   }
 
   checkout() {
     this.cartService.clearCart();
-    this.presentToast('Payment successful');
+    this.presentToast('Payment successful');    // esta funcion limpia al carrito , y muestra que el producto ya fue pagado
   }
 
   async presentToast(message: string) {
-    const toast = await this.toastController.create({
+    const toast = await this.toastController.create({              // este muestra  los detalles del producto agregados por defecto
       message: message,
       duration: 2000,
       position: 'bottom'

@@ -38,11 +38,11 @@ export class ProductDetailPage implements OnInit {
   }
 
   addToCart() {
-    this.cartService.addToCart(this.product);
+    this.cartService.addToCart(this.product);      // aqui mandamos un producto al carrito y mandamos un mensaje de que el producto fue agregado
     this.presentToast('Product added to cart');
   }
 
-  async presentToast(message: string) {
+  async presentToast(message: string) {                    // 
     const toast = await this.toastController.create({
       message: message,
       duration: 2000,
